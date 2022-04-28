@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: eunyungspringpetclinic 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: eunyungspringpetclinic
+  template:
+    metadata:
+      labels:
+        app: eunyungspringpetclinic 
+    spec:
+      containers:
+        - name: eunyungspringpetclinic 
+          image: azuredevopstest1.azurecr.io/eunyungspringpetclinic
+          ports:
+          - containerPort: 80
